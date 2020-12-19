@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About Me</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 40px;
+  text-align: center;
+  background:#DEB887;
+  color: black;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #800000;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #FFFACD;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Footer */
+.footer {
+ 
+  padding: 10px;
+  text-align: center;
+  background: #800000;
+  font-size: 10px;
+
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.collapsible {
+  background-color: #CD5C5C;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin: 30px 30px;
+}
+
+.active, .collapsible:hover {
+  background-color: #F08080;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #F5F5DC;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2> Hello, World </h2>
+  <h1>I'm Nur Azzira Binti Mohamad Shalehen</h1>
+  <p>UITM student</p>
+  
+</div>
+
+<div class="navbar">
+  <a href="index.html" class="center">Home</a>
+  <a href="aboutme.html" class="center">About Me</a>
+  <a href="personaldetails.html" class="center">Personal Details</a>
+  <a href="education.html" class="center">Education</a>
+  <a href="experience.html" class="center">Experience</a>
+  <a href="contact.html" class="center">Contact</a>
+</div>
+
+<div class="row">
+  <div class="center">
+  
+  <h1 style="text-align:center;">My Education</h1>
+
+  
+ <button class="collapsible">Sijil Pelajaran Malaysia</button>
+<div class="content">
+  <p>SEKOLAH MENENGAH PASIR GUDANG 1,JOHOR</p>
+  <p>2013</p>
+  <p>Result : 3A,3B,1C,1D,1E</p>
+</div>
+<button class="collapsible">Diploma in Information Technology And Communication (Programming)</button>
+<div class="content">
+  <p>POLITEKNIK MUADZAM SHAH, PAHANG</p>
+  <p>2014 - 2017</p>
+  <p>CGPA : 3.25</p>
+</div>
+<button class="collapsible">Bachelor of Science Information System Management</button>
+<div class="content">
+  <p>UITM PUNCAK PERDANA, SELANGOR</p>
+  <p>2019 - Current</p>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  
+  </div>
+</div>
+    
+<div class="footer">
+  <h2>Copyright &#169 2020 Nur Azzira UiTM Puncak Perdana</h2>
+  <h2> All Rights Reserved.</h2>
+</div>
+
+</body>
+</html>
